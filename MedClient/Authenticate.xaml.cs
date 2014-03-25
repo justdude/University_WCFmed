@@ -27,8 +27,25 @@ namespace MedClient
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-           // for (int i = 0; i < 10; i++ )
-               password_Text.Text+= Client.ClientInstance.MedClient.GetPosition(1);
+            Client.ClientInstance.Path = @"http://localhost:8085/MedWCF.svc";
+            Client.ClientInstance.Login(loginText.Text, password_Text.Password);
+            
+            if (Client.ClientInstance.Logged)
+            {
+                Room room = new Room();
+                room.Owner = this;
+                this.Hide();
+                room.Show();
+            }
+
+
         }
+
+
+
+        
+
+
+
     }
 }
