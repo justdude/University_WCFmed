@@ -27,8 +27,8 @@ namespace MedClient
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < 10; i++ )
-               password_Text.Text+= Client.ClientInstance.MedClient.GetData();
+           // for (int i = 0; i < 10; i++ )
+               password_Text.Text+= Client.ClientInstance.MedClient.GetPosition(1);
         }
     }
 }

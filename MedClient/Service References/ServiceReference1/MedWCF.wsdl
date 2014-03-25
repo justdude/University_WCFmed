@@ -1,37 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MedWCF" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MedWCF" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://localhost:35085/MedWCF.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:35085/MedWCF.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8085/MedWCF.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8085/MedWCF.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IMedWCF_DoWork_InputMessage">
-    <wsdl:part name="parameters" element="tns:DoWork" />
+  <wsdl:message name="IMedWCF_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
   </wsdl:message>
-  <wsdl:message name="IMedWCF_DoWork_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  <wsdl:message name="IMedWCF_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
-  <wsdl:message name="IMedWCF_GetData_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetData" />
+  <wsdl:message name="IMedWCF_RegPatien_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegPatien" />
   </wsdl:message>
-  <wsdl:message name="IMedWCF_GetData_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  <wsdl:message name="IMedWCF_RegPatien_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegPatienResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMedWCF_RegDoctor_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegDoctor" />
+  </wsdl:message>
+  <wsdl:message name="IMedWCF_RegDoctor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMedWCF_GetPosition_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPosition" />
+  </wsdl:message>
+  <wsdl:message name="IMedWCF_GetPosition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMedWCF_GetPacientsByHospital_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPacientsByHospital" />
+  </wsdl:message>
+  <wsdl:message name="IMedWCF_GetPacientsByHospital_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPacientsByHospitalResponse" />
   </wsdl:message>
   <wsdl:portType name="IMedWCF">
-    <wsdl:operation name="DoWork">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMedWCF/DoWork" message="tns:IMedWCF_DoWork_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMedWCF/DoWorkResponse" message="tns:IMedWCF_DoWork_OutputMessage" />
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMedWCF/Login" message="tns:IMedWCF_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMedWCF/LoginResponse" message="tns:IMedWCF_Login_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetData">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMedWCF/GetData" message="tns:IMedWCF_GetData_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMedWCF/GetDataResponse" message="tns:IMedWCF_GetData_OutputMessage" />
+    <wsdl:operation name="RegPatien">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMedWCF/RegPatien" message="tns:IMedWCF_RegPatien_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMedWCF/RegPatienResponse" message="tns:IMedWCF_RegPatien_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegDoctor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMedWCF/RegDoctor" message="tns:IMedWCF_RegDoctor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMedWCF/RegDoctorResponse" message="tns:IMedWCF_RegDoctor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPosition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMedWCF/GetPosition" message="tns:IMedWCF_GetPosition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMedWCF/GetPositionResponse" message="tns:IMedWCF_GetPosition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPacientsByHospital">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMedWCF/GetPacientsByHospital" message="tns:IMedWCF_GetPacientsByHospital_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMedWCF/GetPacientsByHospitalResponse" message="tns:IMedWCF_GetPacientsByHospital_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IMedWCF" type="tns:IMedWCF">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="DoWork">
-      <soap:operation soapAction="http://tempuri.org/IMedWCF/DoWork" style="document" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IMedWCF/Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -39,8 +69,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetData">
-      <soap:operation soapAction="http://tempuri.org/IMedWCF/GetData" style="document" />
+    <wsdl:operation name="RegPatien">
+      <soap:operation soapAction="http://tempuri.org/IMedWCF/RegPatien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegDoctor">
+      <soap:operation soapAction="http://tempuri.org/IMedWCF/RegDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosition">
+      <soap:operation soapAction="http://tempuri.org/IMedWCF/GetPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPacientsByHospital">
+      <soap:operation soapAction="http://tempuri.org/IMedWCF/GetPacientsByHospital" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -51,7 +108,7 @@
   </wsdl:binding>
   <wsdl:service name="MedWCF">
     <wsdl:port name="BasicHttpBinding_IMedWCF" binding="tns:BasicHttpBinding_IMedWCF">
-      <soap:address location="http://localhost:35085/MedWCF.svc" />
+      <soap:address location="http://localhost:8085/MedWCF.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

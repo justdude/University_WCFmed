@@ -15,17 +15,35 @@ namespace MedClient.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IMedWCF")]
     public interface IMedWCF {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/DoWork", ReplyAction="http://tempuri.org/IMedWCF/DoWorkResponse")]
-        void DoWork();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/Login", ReplyAction="http://tempuri.org/IMedWCF/LoginResponse")]
+        string Login([System.ServiceModel.MessageParameterAttribute(Name="login")] string login1, string pass);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/DoWork", ReplyAction="http://tempuri.org/IMedWCF/DoWorkResponse")]
-        System.Threading.Tasks.Task DoWorkAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/Login", ReplyAction="http://tempuri.org/IMedWCF/LoginResponse")]
+        System.Threading.Tasks.Task<string> LoginAsync(string login, string pass);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetData", ReplyAction="http://tempuri.org/IMedWCF/GetDataResponse")]
-        string GetData();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/RegPatien", ReplyAction="http://tempuri.org/IMedWCF/RegPatienResponse")]
+        string RegPatien(string userSername, string pass, string name, int hospitalId, sbyte sex, int age, string decease, string state);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetData", ReplyAction="http://tempuri.org/IMedWCF/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/RegPatien", ReplyAction="http://tempuri.org/IMedWCF/RegPatienResponse")]
+        System.Threading.Tasks.Task<string> RegPatienAsync(string userSername, string pass, string name, int hospitalId, sbyte sex, int age, string decease, string state);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/RegDoctor", ReplyAction="http://tempuri.org/IMedWCF/RegDoctorResponse")]
+        string RegDoctor(string userSername, string pass, string name, int hospitalId, sbyte sex, int age, string decease, string state, int positionId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/RegDoctor", ReplyAction="http://tempuri.org/IMedWCF/RegDoctorResponse")]
+        System.Threading.Tasks.Task<string> RegDoctorAsync(string userSername, string pass, string name, int hospitalId, sbyte sex, int age, string decease, string state, int positionId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetPosition", ReplyAction="http://tempuri.org/IMedWCF/GetPositionResponse")]
+        string GetPosition(int positionId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetPosition", ReplyAction="http://tempuri.org/IMedWCF/GetPositionResponse")]
+        System.Threading.Tasks.Task<string> GetPositionAsync(int positionId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetPacientsByHospital", ReplyAction="http://tempuri.org/IMedWCF/GetPacientsByHospitalResponse")]
+        string GetPacientsByHospital(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetPacientsByHospital", ReplyAction="http://tempuri.org/IMedWCF/GetPacientsByHospitalResponse")]
+        System.Threading.Tasks.Task<string> GetPacientsByHospitalAsync(string name);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,20 +73,44 @@ namespace MedClient.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public void DoWork() {
-            base.Channel.DoWork();
+        public string Login(string login1, string pass) {
+            return base.Channel.Login(login1, pass);
         }
         
-        public System.Threading.Tasks.Task DoWorkAsync() {
-            return base.Channel.DoWorkAsync();
+        public System.Threading.Tasks.Task<string> LoginAsync(string login, string pass) {
+            return base.Channel.LoginAsync(login, pass);
         }
         
-        public string GetData() {
-            return base.Channel.GetData();
+        public string RegPatien(string userSername, string pass, string name, int hospitalId, sbyte sex, int age, string decease, string state) {
+            return base.Channel.RegPatien(userSername, pass, name, hospitalId, sex, age, decease, state);
         }
         
-        public System.Threading.Tasks.Task<string> GetDataAsync() {
-            return base.Channel.GetDataAsync();
+        public System.Threading.Tasks.Task<string> RegPatienAsync(string userSername, string pass, string name, int hospitalId, sbyte sex, int age, string decease, string state) {
+            return base.Channel.RegPatienAsync(userSername, pass, name, hospitalId, sex, age, decease, state);
+        }
+        
+        public string RegDoctor(string userSername, string pass, string name, int hospitalId, sbyte sex, int age, string decease, string state, int positionId) {
+            return base.Channel.RegDoctor(userSername, pass, name, hospitalId, sex, age, decease, state, positionId);
+        }
+        
+        public System.Threading.Tasks.Task<string> RegDoctorAsync(string userSername, string pass, string name, int hospitalId, sbyte sex, int age, string decease, string state, int positionId) {
+            return base.Channel.RegDoctorAsync(userSername, pass, name, hospitalId, sex, age, decease, state, positionId);
+        }
+        
+        public string GetPosition(int positionId) {
+            return base.Channel.GetPosition(positionId);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetPositionAsync(int positionId) {
+            return base.Channel.GetPositionAsync(positionId);
+        }
+        
+        public string GetPacientsByHospital(string name) {
+            return base.Channel.GetPacientsByHospital(name);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetPacientsByHospitalAsync(string name) {
+            return base.Channel.GetPacientsByHospitalAsync(name);
         }
     }
 }
