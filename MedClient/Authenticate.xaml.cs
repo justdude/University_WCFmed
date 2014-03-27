@@ -27,7 +27,7 @@ namespace MedClient
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            Client.ClientInstance.Path = @"http://localhost:8085/MedWCF.svc";
+            Client.Path = @"http://192.168.0.158:8085/MedWCF.svc";
             Client.ClientInstance.Login(loginText.Text, password_Text.Password);
             
             if (Client.ClientInstance.Logged)
@@ -37,8 +37,26 @@ namespace MedClient
                 this.Hide();
                 room.Show();
             }
+            else
+            {
+                BangEffect(250);
+            }
 
 
+        }
+
+        private void BangEffect(int millisec)
+        {
+            double l = this.Left;
+            double up = this.Top;
+            Random r = new Random();
+            for (int i = 0; i < millisec; i++)
+            {
+                System.Threading.Thread.Sleep(1);
+                this.Left = l + r.Next(-5, 5);
+                this.Top = up + r.Next(-5, 5);
+
+            }
         }
 
 

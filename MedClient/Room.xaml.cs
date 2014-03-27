@@ -29,7 +29,20 @@ namespace MedClient
             this.Owner.Show();
         }
 
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
+        {          
+            this.name.Text = Client.ClientInstance.info.name;
+            this.sourname.Text = Client.ClientInstance.info.sourname;
+            this.age.Text = Client.ClientInstance.info.age.ToString();
+            //this.hospital_name.Content = Client.ClientInstance. Client.ClientInstance.info.hospitals_id;
+
+            string[] arr = Client.ClientInstance.MedClient.GetHospitals();
+            foreach (string st in arr)
+                this.hospitals.Items.Add(st);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }

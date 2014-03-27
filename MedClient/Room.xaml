@@ -26,7 +26,7 @@
                     <TextBox Name="sourname" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100"></TextBox>
                     
                     <Label Content="Age" HorizontalAlignment="Left" VerticalAlignment="Top"></Label>
-                    <ListBox Name="age" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="18"></ListBox>
+                    <TextBox Name="age" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="18"></TextBox>
                     
                     <Label Content="Hospital" HorizontalAlignment="Left" VerticalAlignment="Top"></Label>
                     <Label Name="hospital_name"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="22"></Label>
@@ -37,7 +37,7 @@
                     <Label Content="Hospitals" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
                     <ListBox Name="hospitals" HorizontalAlignment="Center" VerticalAlignment="Top" Width="210" Height="250"></ListBox>
 
-                    <Button Content="clickme" Width="220" Margin="10,10,0,0"/>
+                    <Button Content="clickme" Width="220" Margin="10,10,0,0" Click="Button_Click"/>
                     
                 </StackPanel>
             </Grid>

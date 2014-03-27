@@ -33,15 +33,14 @@ namespace MedClient
                     BasicHttpBinding binding = new BasicHttpBinding();
                     EndpointAddress adress = new EndpointAddress(Path);
                     _medClient = new MedWCFClient(binding,adress);
-                    _medClient = new MedWCFClient();
 
                 }
                 return _medClient;
             }
         }
 
-        private string _path = @"http://localhost:8085/MedWCF.svc";
-        public string Path
+        private static string _path = @"http://localhost:8085/MedWCF.svc";
+        public static string Path
         {
             get
             {
@@ -59,6 +58,7 @@ namespace MedClient
             private set;
         }
 
+        public peoples info = null;
 
         public bool Login(string name, string pass)
         {
@@ -66,6 +66,9 @@ namespace MedClient
                 Logged = true;
             else
                 Logged = false;
+
+            info = this.MedClient.GetPeopleInfo(name);
+
             return Logged;
         }
 

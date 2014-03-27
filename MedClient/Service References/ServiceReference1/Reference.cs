@@ -9,7 +9,150 @@
 //------------------------------------------------------------------------------
 
 namespace MedClient.ServiceReference1 {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="peoples", Namespace="http://schemas.datacontract.org/2004/07/MedWcfService")]
+    [System.SerializableAttribute()]
+    public partial class peoples : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> hospitals_idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string passField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<sbyte> sexField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sournameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> age {
+            get {
+                return this.ageField;
+            }
+            set {
+                if ((this.ageField.Equals(value) != true)) {
+                    this.ageField = value;
+                    this.RaisePropertyChanged("age");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> hospitals_id {
+            get {
+                return this.hospitals_idField;
+            }
+            set {
+                if ((this.hospitals_idField.Equals(value) != true)) {
+                    this.hospitals_idField = value;
+                    this.RaisePropertyChanged("hospitals_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string pass {
+            get {
+                return this.passField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.passField, value) != true)) {
+                    this.passField = value;
+                    this.RaisePropertyChanged("pass");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<sbyte> sex {
+            get {
+                return this.sexField;
+            }
+            set {
+                if ((this.sexField.Equals(value) != true)) {
+                    this.sexField = value;
+                    this.RaisePropertyChanged("sex");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string sourname {
+            get {
+                return this.sournameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sournameField, value) != true)) {
+                    this.sournameField = value;
+                    this.RaisePropertyChanged("sourname");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IMedWCF")]
@@ -44,6 +187,18 @@ namespace MedClient.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetPacientsByHospital", ReplyAction="http://tempuri.org/IMedWCF/GetPacientsByHospitalResponse")]
         System.Threading.Tasks.Task<string> GetPacientsByHospitalAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetHospitals", ReplyAction="http://tempuri.org/IMedWCF/GetHospitalsResponse")]
+        string[] GetHospitals();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetHospitals", ReplyAction="http://tempuri.org/IMedWCF/GetHospitalsResponse")]
+        System.Threading.Tasks.Task<string[]> GetHospitalsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetPeopleInfo", ReplyAction="http://tempuri.org/IMedWCF/GetPeopleInfoResponse")]
+        MedClient.ServiceReference1.peoples GetPeopleInfo(string userName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetPeopleInfo", ReplyAction="http://tempuri.org/IMedWCF/GetPeopleInfoResponse")]
+        System.Threading.Tasks.Task<MedClient.ServiceReference1.peoples> GetPeopleInfoAsync(string userName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -111,6 +266,22 @@ namespace MedClient.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string> GetPacientsByHospitalAsync(string name) {
             return base.Channel.GetPacientsByHospitalAsync(name);
+        }
+        
+        public string[] GetHospitals() {
+            return base.Channel.GetHospitals();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> GetHospitalsAsync() {
+            return base.Channel.GetHospitalsAsync();
+        }
+        
+        public MedClient.ServiceReference1.peoples GetPeopleInfo(string userName) {
+            return base.Channel.GetPeopleInfo(userName);
+        }
+        
+        public System.Threading.Tasks.Task<MedClient.ServiceReference1.peoples> GetPeopleInfoAsync(string userName) {
+            return base.Channel.GetPeopleInfoAsync(userName);
         }
     }
 }
