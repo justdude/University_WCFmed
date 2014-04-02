@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace MedClient
 {
     /// <summary>
-    /// Interaction logic for Room.xaml
+    /// Interaction logic for PatientRoom.xaml
     /// </summary>
-    public partial class Room : Window
+    public partial class PatientRoom : Window
     {
-        public Room()
+        public PatientRoom()
         {
             InitializeComponent();
         }
@@ -29,24 +29,23 @@ namespace MedClient
             this.Owner.Show();
         }
 
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
-        {          
-            this.name.Text = Client.ClientInstance.info.name;
-            this.sourname.Text = Client.ClientInstance.info.sourname;
-            this.age.Content = Client.ClientInstance.info.age.ToString();
-            //this.hospital_name.Content = Client.ClientInstance. Client.ClientInstance.info.hospitals_id;
+        {
+            this.nameData.Content = Client.ClientInstance.info.name + " " + Client.ClientInstance.info.sourname;
 
             string[] arr = Client.ClientInstance.MedClient.GetHospitals();
-            /*foreach (string st in arr)
-                this.hospitals.Items.Add(st);*/
-
-            this.hospitals.ItemsSource = arr;
+            this.listbox1.ItemsSource = arr;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        public DateTime dateTime;
 
+        private void selectDoctorButton_Click(object sender, RoutedEventArgs e)
+        {
+            SelectDoctorTime room = new SelectDoctorTime(dateTime);
+            room.Owner = this;
+            room.ShowDialog();
+
+            
         }
     }
 }

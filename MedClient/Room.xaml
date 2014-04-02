@@ -8,7 +8,7 @@
             <ColumnDefinition Width="233*"/>
         </Grid.ColumnDefinitions>
 
-        <GroupBox Header="Room" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2">
+        <GroupBox Header="Room" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Background="#FFE5E5E5">
             
             <Grid >
                 <Grid.ColumnDefinitions>
@@ -18,24 +18,39 @@
                 
                 <StackPanel HorizontalAlignment="Stretch" Height="auto" VerticalAlignment="Top"  Margin="10,10,0,0">
 
-                    <Image Name="photo" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" Height="120"  Source="Images/man.jpg" Stretch="Uniform"></Image>
-                    <Label Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top"></Label>
-                    <TextBox Name="name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100"></TextBox>
+				<StackPanel> 
+					<Image Name="photo" HorizontalAlignment="center"  VerticalAlignment="Top" Width="120" Height="120"  Source="Images/man.jpg" Stretch="Uniform"></Image>
+                    <Label Content="Name" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
+         
+				</StackPanel>
+                  
+					
+				           <TextBox Name="name" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100"></TextBox>
                     
-                    <Label  Content="Sourname" HorizontalAlignment="Left" VerticalAlignment="Top"></Label>
-                    <TextBox Name="sourname" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100"></TextBox>
+                    <Label  Content="Sourname" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
+                    <TextBox Name="sourname" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100"></TextBox>
                     
-                    <Label Content="Age" HorizontalAlignment="Left" VerticalAlignment="Top"></Label>
-                    <TextBox Name="age" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="18"></TextBox>
-                    
-                    <Label Content="Hospital" HorizontalAlignment="Left" VerticalAlignment="Top"></Label>
+                    <Label Content="Age" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
+                    <Label Content="0"  Name="age" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
+
+                    <Label Content="Hospital" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
                     <Label Name="hospital_name"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="22"></Label>
                 </StackPanel>
                 
                 <StackPanel Grid.Column="1" HorizontalAlignment="Stretch" Height="auto" VerticalAlignment="Stretch"  Margin="10,10,0,0">
 
-                    <Label Content="Hospitals" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
-                    <ListBox Name="hospitals" HorizontalAlignment="Center" VerticalAlignment="Top" Width="210" Height="250"></ListBox>
+                    <Label Content="Patients" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
+                    <ListBox Name="hospitals" HorizontalAlignment="Center" VerticalAlignment="Top" Width="210" Height="250">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel  Orientation="Horizontal">
+                                    <Label Content="{Binding}"></Label>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        
+                        
+                    </ListBox>
 
                     <Button Content="clickme" Width="220" Margin="10,10,0,0" Click="Button_Click"/>
                     

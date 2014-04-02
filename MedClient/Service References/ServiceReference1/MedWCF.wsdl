@@ -50,6 +50,18 @@
   <wsdl:message name="IMedWCF_GetPeopleInfo_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPeopleInfoResponse" />
   </wsdl:message>
+  <wsdl:message name="IMedWCF_GetHospitalName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHospitalName" />
+  </wsdl:message>
+  <wsdl:message name="IMedWCF_GetHospitalName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHospitalNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMedWCF_AddToJournal_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToJournal" />
+  </wsdl:message>
+  <wsdl:message name="IMedWCF_AddToJournal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToJournalResponse" />
+  </wsdl:message>
   <wsdl:portType name="IMedWCF">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IMedWCF/Login" message="tns:IMedWCF_Login_InputMessage" />
@@ -78,6 +90,14 @@
     <wsdl:operation name="GetPeopleInfo">
       <wsdl:input wsaw:Action="http://tempuri.org/IMedWCF/GetPeopleInfo" message="tns:IMedWCF_GetPeopleInfo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMedWCF/GetPeopleInfoResponse" message="tns:IMedWCF_GetPeopleInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHospitalName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMedWCF/GetHospitalName" message="tns:IMedWCF_GetHospitalName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMedWCF/GetHospitalNameResponse" message="tns:IMedWCF_GetHospitalName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToJournal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMedWCF/AddToJournal" message="tns:IMedWCF_AddToJournal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMedWCF/AddToJournalResponse" message="tns:IMedWCF_AddToJournal_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IMedWCF" type="tns:IMedWCF">
@@ -138,6 +158,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetPeopleInfo">
       <soap:operation soapAction="http://tempuri.org/IMedWCF/GetPeopleInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHospitalName">
+      <soap:operation soapAction="http://tempuri.org/IMedWCF/GetHospitalName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToJournal">
+      <soap:operation soapAction="http://tempuri.org/IMedWCF/AddToJournal" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

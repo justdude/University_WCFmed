@@ -199,6 +199,18 @@ namespace MedClient.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetPeopleInfo", ReplyAction="http://tempuri.org/IMedWCF/GetPeopleInfoResponse")]
         System.Threading.Tasks.Task<MedClient.ServiceReference1.peoples> GetPeopleInfoAsync(string userName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetHospitalName", ReplyAction="http://tempuri.org/IMedWCF/GetHospitalNameResponse")]
+        string GetHospitalName(int hospitalId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetHospitalName", ReplyAction="http://tempuri.org/IMedWCF/GetHospitalNameResponse")]
+        System.Threading.Tasks.Task<string> GetHospitalNameAsync(int hospitalId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/AddToJournal", ReplyAction="http://tempuri.org/IMedWCF/AddToJournalResponse")]
+        string AddToJournal(int doctor_id, int pacient_id, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/AddToJournal", ReplyAction="http://tempuri.org/IMedWCF/AddToJournalResponse")]
+        System.Threading.Tasks.Task<string> AddToJournalAsync(int doctor_id, int pacient_id, System.DateTime date);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -282,6 +294,22 @@ namespace MedClient.ServiceReference1 {
         
         public System.Threading.Tasks.Task<MedClient.ServiceReference1.peoples> GetPeopleInfoAsync(string userName) {
             return base.Channel.GetPeopleInfoAsync(userName);
+        }
+        
+        public string GetHospitalName(int hospitalId) {
+            return base.Channel.GetHospitalName(hospitalId);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetHospitalNameAsync(int hospitalId) {
+            return base.Channel.GetHospitalNameAsync(hospitalId);
+        }
+        
+        public string AddToJournal(int doctor_id, int pacient_id, System.DateTime date) {
+            return base.Channel.AddToJournal(doctor_id, pacient_id, date);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddToJournalAsync(int doctor_id, int pacient_id, System.DateTime date) {
+            return base.Channel.AddToJournalAsync(doctor_id, pacient_id, date);
         }
     }
 }

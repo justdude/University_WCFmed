@@ -114,4 +114,34 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetHospitalName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hospitalId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHospitalNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetHospitalNameResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddToJournal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="doctor_id" type="xs:int" />
+        <xs:element minOccurs="0" name="pacient_id" type="xs:int" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddToJournalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddToJournalResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
