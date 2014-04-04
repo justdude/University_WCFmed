@@ -24,7 +24,7 @@
 					Text="Password:"
 					VerticalAlignment="Top"
 					Width="54" Height="27" RenderTransformOrigin="0.59,3.889" Foreground="Black" Style="{DynamicResource TextBlockStyle1}" Grid.Column="1"/>
-                <TextBox x:Name="loginText" HorizontalAlignment="Left" Height="23" Margin="20,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Text="ivan1" Grid.Column="2"/>
+                <TextBox x:Name="loginText" HorizontalAlignment="Left" Height="23" Margin="20,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Text="albantov" Grid.Column="2" UndoLimit="123"/>
                 <Button x:Name="LoginButton" Content="Log in" HorizontalAlignment="Left" Margin="20,121,0,0" VerticalAlignment="Top" Width="176" Click="LoginButton_Click" Grid.Column="2" RenderTransformOrigin="1,1" Background="#99373737">
                 </Button>
                 <PasswordBox x:Name="password_Text" HorizontalAlignment="Left" Margin="20,62,0,0" VerticalAlignment="Top" Width="199" Height="22" Password="111" Cursor="" Grid.Column="2"/>

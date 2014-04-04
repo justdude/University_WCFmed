@@ -154,6 +154,83 @@ namespace MedClient.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="deseases", Namespace="http://schemas.datacontract.org/2004/07/MedWcfService")]
+    [System.SerializableAttribute()]
+    public partial class deseases : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string aboutField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int iddeseasesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string about {
+            get {
+                return this.aboutField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.aboutField, value) != true)) {
+                    this.aboutField = value;
+                    this.RaisePropertyChanged("about");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int iddeseases {
+            get {
+                return this.iddeseasesField;
+            }
+            set {
+                if ((this.iddeseasesField.Equals(value) != true)) {
+                    this.iddeseasesField = value;
+                    this.RaisePropertyChanged("iddeseases");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IMedWCF")]
     public interface IMedWCF {
@@ -211,6 +288,18 @@ namespace MedClient.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/AddToJournal", ReplyAction="http://tempuri.org/IMedWCF/AddToJournalResponse")]
         System.Threading.Tasks.Task<string> AddToJournalAsync(int doctor_id, int pacient_id, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetDeseases", ReplyAction="http://tempuri.org/IMedWCF/GetDeseasesResponse")]
+        MedClient.ServiceReference1.deseases[] GetDeseases();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetDeseases", ReplyAction="http://tempuri.org/IMedWCF/GetDeseasesResponse")]
+        System.Threading.Tasks.Task<MedClient.ServiceReference1.deseases[]> GetDeseasesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetHospitalsListBy", ReplyAction="http://tempuri.org/IMedWCF/GetHospitalsListByResponse")]
+        System.Collections.Generic.Dictionary<object, object> GetHospitalsListBy(int desease_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMedWCF/GetHospitalsListBy", ReplyAction="http://tempuri.org/IMedWCF/GetHospitalsListByResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<object, object>> GetHospitalsListByAsync(int desease_id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -310,6 +399,22 @@ namespace MedClient.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string> AddToJournalAsync(int doctor_id, int pacient_id, System.DateTime date) {
             return base.Channel.AddToJournalAsync(doctor_id, pacient_id, date);
+        }
+        
+        public MedClient.ServiceReference1.deseases[] GetDeseases() {
+            return base.Channel.GetDeseases();
+        }
+        
+        public System.Threading.Tasks.Task<MedClient.ServiceReference1.deseases[]> GetDeseasesAsync() {
+            return base.Channel.GetDeseasesAsync();
+        }
+        
+        public System.Collections.Generic.Dictionary<object, object> GetHospitalsListBy(int desease_id) {
+            return base.Channel.GetHospitalsListBy(desease_id);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<object, object>> GetHospitalsListByAsync(int desease_id) {
+            return base.Channel.GetHospitalsListByAsync(desease_id);
         }
     }
 }

@@ -59,7 +59,7 @@ namespace MedClient
         }
 
         public peoples info = null;
-
+        
         public bool Login(string name, string pass)
         {
             if (MedClient.Login(name, pass) == "OK")

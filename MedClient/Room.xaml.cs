@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using System.Collections.ObjectModel;
+
 namespace MedClient
 {
     /// <summary>
@@ -30,18 +32,33 @@ namespace MedClient
         }
 
 
+
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {          
+            
+            var pacients = new List<Pacient>();
+            var ppp = new ServiceReference1.peoples();
+            ppp.id = 1;
+            ppp.name = "ivan";
+            ppp.sourname = "Albantov";
+            ppp.hospitals_id = 1;
+
+            pacients.Add(new Pacient(ppp, "Hospital1", "desease1", "doctor"));
+            pacients.Add(new Pacient(ppp, "Hospital2", "desease1", "doctor"));
+            pacients.Add(new Pacient(ppp, "Hospital3", "desease1", "doctor"));
+
+            this.pacients.ItemsSource = pacients;
+
+            FillDataAbout();
+        }
+
+        private void FillDataAbout()
+        {
             this.name.Text = Client.ClientInstance.info.name;
             this.sourname.Text = Client.ClientInstance.info.sourname;
             this.age.Content = Client.ClientInstance.info.age.ToString();
             //this.hospital_name.Content = Client.ClientInstance. Client.ClientInstance.info.hospitals_id;
-
-            string[] arr = Client.ClientInstance.MedClient.GetHospitals();
-            /*foreach (string st in arr)
-                this.hospitals.Items.Add(st);*/
-
-            this.hospitals.ItemsSource = arr;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

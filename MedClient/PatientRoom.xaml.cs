@@ -31,21 +31,49 @@ namespace MedClient
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            this.nameData.Content = Client.ClientInstance.info.name + " " + Client.ClientInstance.info.sourname;
 
-            string[] arr = Client.ClientInstance.MedClient.GetHospitals();
-            this.listbox1.ItemsSource = arr;
+
+            var des = Client.ClientInstance.MedClient.GetDeseases();
+
+            deseasesCombo.ItemsSource = des;
+
+            FillDataAbout();
+            targetDate.Text = DateTime.Today.ToShortDateString();
+
+            for (int i = 0; i < 24; i++)
+                targetTime.Items.Add(i.ToString());
+            targetTime.SelectedIndex = 12;
         }
 
-        public DateTime dateTime;
-
-        private void selectDoctorButton_Click(object sender, RoutedEventArgs e)
+        private void FillDataAbout()
         {
-            SelectDoctorTime room = new SelectDoctorTime(dateTime);
-            room.Owner = this;
-            room.ShowDialog();
+            this.name.Text = Client.ClientInstance.info.name;
+            this.sourname.Text = Client.ClientInstance.info.sourname;
+            this.age.Content = Client.ClientInstance.info.age.ToString();
+            //this.hospital_name.Content = Client.ClientInstance. Client.ClientInstance.info.hospitals_id;
+        }
 
-            
+        private void Search_Click(object sender, RoutedEventArgs e)
+        {
+            List<Hospital> hospitals = new List<Hospital>();
+            var hash = Client.ClientInstance.MedClient.GetHospitalsListBy(this.deseasesCombo.SelectedIndex);
+           
+            foreach (var el in hash)
+            {
+                Hospital hosp = new Hospital();
+                hosp.hospital = el.Key.ToString();
+                hosp.doctor = el.Value.ToString()+"asd";
+                hospitals.Add(hosp);
+            }
+            this.doctorsListBox.ItemsSource = hospitals;
+        }
+
+        private void Assign_Click(object sender, RoutedEventArgs e)
+        {
+            if (doctorsListBox.Items.Count > 0 && doctorsListBox.SelectedIndex>-1)
+            {
+                //doctorsListBox.SelectedIndex
+            }
         }
     }
 }

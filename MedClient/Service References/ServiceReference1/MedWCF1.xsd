@@ -12,4 +12,18 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="peoples" nillable="true" type="tns:peoples" />
+  <xs:complexType name="ArrayOfdeseases">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="deseases" nillable="true" type="tns:deseases" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdeseases" nillable="true" type="tns:ArrayOfdeseases" />
+  <xs:complexType name="deseases">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="about" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="iddeseases" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="deseases" nillable="true" type="tns:deseases" />
 </xs:schema>

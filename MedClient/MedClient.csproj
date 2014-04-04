@@ -63,6 +63,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Client.cs" />
+    <Compile Include="DataBindingTypes.cs" />
+    <Compile Include="Hospital.cs" />
     <Compile Include="PatientRoom.xaml.cs">
       <DependentUpon>PatientRoom.xaml</DependentUpon>
     </Compile>
@@ -130,6 +132,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\ServiceReference1\MedClient.ServiceReference1.deseases.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\MedClient.ServiceReference1.peoples.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -157,6 +162,10 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\avatar.png" />
+    <Resource Include="Images\human.jpg" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />

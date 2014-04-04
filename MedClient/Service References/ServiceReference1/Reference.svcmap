@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="65eac92d-02f5-4336-b24d-54c84633dc47" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="93727532-5331-4ceb-9f2a-91ce775a8b97" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,12 +22,12 @@
     <MetadataSource Address="http://localhost:8085/MedWCF.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="MedWCF.disco" MetadataType="Disco" ID="bf697df4-ea6d-4d2a-873b-9eed0608f32d" SourceId="1" SourceUrl="http://localhost:8085/MedWCF.svc?disco" />
-    <MetadataFile FileName="MedWCF.xsd" MetadataType="Schema" ID="7fb58599-fbf6-4f37-9eb4-3c1b90d1832f" SourceId="1" SourceUrl="http://localhost:8085/MedWCF.svc?xsd=xsd1" />
-    <MetadataFile FileName="MedWCF1.xsd" MetadataType="Schema" ID="b2b50b86-4b81-418d-9d4d-94c7117a3025" SourceId="1" SourceUrl="http://localhost:8085/MedWCF.svc?xsd=xsd3" />
-    <MetadataFile FileName="MedWCF2.xsd" MetadataType="Schema" ID="e9495566-8aae-45c4-82f7-0610e2678555" SourceId="1" SourceUrl="http://localhost:8085/MedWCF.svc?xsd=xsd2" />
-    <MetadataFile FileName="MedWCF.wsdl" MetadataType="Wsdl" ID="acb12912-a35f-495e-8893-25f37ebbafc3" SourceId="1" SourceUrl="http://localhost:8085/MedWCF.svc?wsdl" />
-    <MetadataFile FileName="MedWCF3.xsd" MetadataType="Schema" ID="77e301ea-b7fb-4c61-8e40-e2e4e9c5fa38" SourceId="1" SourceUrl="http://localhost:8085/MedWCF.svc?xsd=xsd0" />
+    <MetadataFile FileName="MedWCF.disco" MetadataType="Disco" ID="99d22c3c-60f3-4020-a1c1-25e3ab633b4d" SourceId="1" SourceUrl="http://localhost:8085/MedWCF.svc?disco" />
+    <MetadataFile FileName="MedWCF.xsd" MetadataType="Schema" ID="588be9ed-497b-4b39-a033-24f4103adde0" SourceId="1" SourceUrl="http://localhost:8085/MedWCF.svc?xsd=xsd1" />
+    <MetadataFile FileName="MedWCF1.xsd" MetadataType="Schema" ID="cbd0df3f-400a-4b42-a911-e771507585a2" SourceId="1" SourceUrl="http://localhost:8085/MedWCF.svc?xsd=xsd3" />
+    <MetadataFile FileName="MedWCF2.xsd" MetadataType="Schema" ID="f3f16b33-8712-484a-b15f-7c251ca365c3" SourceId="1" SourceUrl="http://localhost:8085/MedWCF.svc?xsd=xsd2" />
+    <MetadataFile FileName="MedWCF.wsdl" MetadataType="Wsdl" ID="a800ac17-a288-4afc-a066-095e14b672f3" SourceId="1" SourceUrl="http://localhost:8085/MedWCF.svc?wsdl" />
+    <MetadataFile FileName="MedWCF3.xsd" MetadataType="Schema" ID="a4a67560-8df0-408d-ab51-758c89d41bfb" SourceId="1" SourceUrl="http://localhost:8085/MedWCF.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
