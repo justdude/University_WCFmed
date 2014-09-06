@@ -27,6 +27,11 @@ namespace MedClient
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            Room room = new Room();
+            room.Owner = this;
+            this.Hide();
+            room.Show();
+            return;/*
             Client.Path = @"http://25.110.206.54:8085/MedWCF.svc";
             Client.ClientInstance.Login(loginText.Text, password_Text.Password);
             
@@ -52,7 +57,7 @@ namespace MedClient
             else
             {
                 BangEffect(250);
-            }
+            }*/
 
 
         }

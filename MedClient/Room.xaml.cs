@@ -55,9 +55,13 @@ namespace MedClient
 
         private void FillDataAbout()
         {
-            this.name.Text = Client.ClientInstance.info.name;
+           /* this.name.Text = Client.ClientInstance.info.name;
             this.sourname.Text = Client.ClientInstance.info.sourname;
-            this.age.Content = Client.ClientInstance.info.age.ToString();
+            this.age.Content = Client.ClientInstance.info.age.ToString();*/
+
+            this.name.Text = "Ivan";
+            this.sourname.Text = "Albantov";
+            this.age.Content = "21";
             //this.hospital_name.Content = Client.ClientInstance. Client.ClientInstance.info.hospitals_id;
         }
 

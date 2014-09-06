@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.IO;
-using JsonFx.Json;
+/*using JsonFx.Json;
 using JsonFx.Xml;
 /// <summary>
 /// Json fx adapter. Adapter for Json FX library
@@ -50,3 +50,4 @@ public class JsonFxAdapter<T>
 		return arr1;
 	}
 }
+*/
